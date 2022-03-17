@@ -1,0 +1,14 @@
+{
+    "GOOD_MORNING": "Buenos Dias",
+    "SUBSCRIPTION_EXPIRED": "Contacto {email} para soporte",
+    "SETUP": {
+        "WELCOME": "Bienvenidos {0.username}",
+        "BYE": "Adios {0.username}",
+        "INCORRECT_ANSWER": { 
+            "one": "{0.username} responde la pregunta incorrectamente {0.count} vece",
+            "other": "{0.username} responde la pregunta incorrectamente {0.count} veces",
+            "zero": "{0.username} responde la pregunta correctamente"
+        }
+    },
+    "EXCEPTION": "No se"
+}

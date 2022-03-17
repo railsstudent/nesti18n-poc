@@ -1,0 +1,14 @@
+{
+    "GOOD_MORNING": "Good Morning",
+    "SUBSCRIPTION_EXPIRED": "Contact {email} for support",
+    "SETUP": {
+        "WELCOME": "Welcome {0.username}",
+        "BYE": "Bye {0.username}", 
+        "INCORRECT_ANSWER": { 
+            "one": "{username} answers the question incorrectly {0.count} time",
+            "other": "{username} answers the question incorrectly {0.count} times",
+            "zero": "{username} answers the question correctly"
+        }
+    },
+    "EXCEPTION": "I don't know"
+}

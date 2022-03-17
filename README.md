@@ -58,6 +58,21 @@ $ npm run test:e2e
 $ npm run test:cov
 ```
 
+## Curl
+```
+curl --location --request GET 'http://localhost:3001/pluralize-message?username=John&numOfTimes=100' \
+--header 'language: es'
+
+John responde la pregunta incorrectamente 100 veces
+```
+
+```
+curl --location --request GET 'http://localhost:3001/pluralize-message?username=John&numOfTimes=100' \
+--header 'language: en'
+
+John answers the question incorrectly 100 times
+```
+
 ## Support
 
 Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).

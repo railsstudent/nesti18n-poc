@@ -10,5 +10,5 @@
             "zero": "{username} answers the question correctly"
         }
     },
-    "EXCEPTION": "I don't know"
+    "EXCEPTION": "I don't know {0.language}"
 }

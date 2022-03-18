@@ -10,5 +10,5 @@
             "zero": "{0.username} responde la pregunta correctamente"
         }
     },
-    "EXCEPTION": "No se"
+    "EXCEPTION": "No se {0.language}"
 }

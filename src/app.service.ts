@@ -17,13 +17,13 @@ export class AppService {
     return this.i18n.translate('error.SUBSCRIPTION_EXPIRED', { args: { email: 'abc@example.com' }, lang })
   }
 
-  async getNestedTranslation(lang: string, username: string): Promise<any> {
+  async getNestedTranslationMessage(lang: string, username: string): Promise<any> {
     const welcome = await this.i18n.translate('error.SETUP.WELCOME', { args: { username }, lang })
     const bye = await this.i18n.translate('error.SETUP.BYE', { args: { username}, lang })
     return `${welcome}, ${bye}`
   }
 
-  getPluralizeTranslation(lang: string, username: string, numOfTimes: string): Promise<any> {
+  getPluralizeTranslationMessage(lang: string, username: string, numOfTimes: string): Promise<any> {
     return this.i18n.translate('error.SETUP.INCORRECT_ANSWER', { args: { username, count: numOfTimes }, lang })
   }
 }

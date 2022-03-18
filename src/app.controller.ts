@@ -1,4 +1,4 @@
-import { Controller, Get, Query } from '@nestjs/common';
+import { BadRequestException, Controller, Get, Query } from '@nestjs/common';
 import { I18nLang } from 'nestjs-i18n';
 import { AppService } from './app.service';
 
@@ -22,12 +22,22 @@ export class AppController {
   }
 
   @Get('nested-message')
-  getNestedTranslation(@I18nLang() lang: string, @Query('username') username: string): Promise<any> {
-    return this.appService.getNestedTranslation(lang, username);
+  getNestedTranslationMessage(@I18nLang() lang: string, @Query('username') username: string): Promise<any> {
+    return this.appService.getNestedTranslationMessage(lang, username);
   }
 
   @Get('pluralize-message')
-  getPluralizeTranslation(@I18nLang() lang: string, @Query('username') username: string, @Query('numOfTimes') numOfTimes: string): Promise<any> {
-    return this.appService.getPluralizeTranslation(lang, username, numOfTimes);
+  getPluralizeTranslationMessage(@I18nLang() lang: string, @Query('username') username: string, @Query('numOfTimes') numOfTimes: string): Promise<any> {
+    return this.appService.getPluralizeTranslationMessage(lang, username, numOfTimes);
+  }
+
+  @Get('bad-translated-exception')
+  getTranslatedException(): Promise<any> {
+    throw new BadRequestException({ key: 'error.EXCEPTION', args: { language: 'German' } })
+  }
+
+  @Get('bad')
+  getException(): Promise<any> {
+    throw new BadRequestException('Error message does not have translation')
   }
 }

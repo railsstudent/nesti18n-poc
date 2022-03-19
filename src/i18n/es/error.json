@@ -1,6 +1,6 @@
 {
     "GOOD_MORNING": "Buenos Dias",
-    "SUBSCRIPTION_EXPIRED": "Contacto {email} para soporte",
+    "SUBSCRIPTION_EXPIRED": "Contacto {0.email} para soporte",
     "SETUP": {
         "WELCOME": "Bienvenidos {0.username}",
         "BYE": "Adios {0.username}",

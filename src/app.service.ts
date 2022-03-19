@@ -5,10 +5,6 @@ import { I18nService } from 'nestjs-i18n'
 export class AppService {
   constructor(private i18n: I18nService) {}
 
-  getHello(): string {
-    return 'Hello World!'
-  }
-
   getGoodMorning(lang: string): Promise<any> {
     return this.i18n.translate('error.GOOD_MORNING', { lang })
   }

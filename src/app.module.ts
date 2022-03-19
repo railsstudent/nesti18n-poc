@@ -1,10 +1,10 @@
-import { Module } from '@nestjs/common';
-import { HeaderResolver, I18nJsonParser, I18nModule } from 'nestjs-i18n';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
-import * as path from 'path';
-import { APP_FILTER } from '@nestjs/core';
-import { AllExceptionsFilter } from './all-exceptions.filter';
+import { Module } from '@nestjs/common'
+import { HeaderResolver, I18nJsonParser, I18nModule } from 'nestjs-i18n'
+import { AppController } from './app.controller'
+import { AppService } from './app.service'
+import * as path from 'path'
+import { APP_FILTER } from '@nestjs/core'
+import { AllExceptionsFilter } from './all-exceptions.filter'
 @Module({
   imports: [
     I18nModule.forRoot({
@@ -14,7 +14,7 @@ import { AllExceptionsFilter } from './all-exceptions.filter';
         path: path.join(__dirname, '/i18n/'),
         watch: true,
       },
-      resolvers: [new HeaderResolver(['language'])]
+      resolvers: [new HeaderResolver(['language'])],
     }),
   ],
   controllers: [AppController],
@@ -23,8 +23,7 @@ import { AllExceptionsFilter } from './all-exceptions.filter';
     {
       provide: APP_FILTER,
       useClass: AllExceptionsFilter,
-    }
-  
+    },
   ],
 })
 export class AppModule {}

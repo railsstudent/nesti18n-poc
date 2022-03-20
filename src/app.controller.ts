@@ -25,9 +25,9 @@ export class AppController {
   getPluralizeTranslationMessage(
     @I18nLang() lang: string,
     @Query('username') username: string,
-    @Query('numOfTimes') numOfTimes: string,
+    @Query('numOfTimes') count: string,
   ): Promise<any> {
-    return this.appService.getPluralizeTranslationMessage(lang, username, numOfTimes)
+    return this.appService.getPluralizeTranslationMessage(lang, username, count)
   }
 
   @Get('bad-translated-exception')

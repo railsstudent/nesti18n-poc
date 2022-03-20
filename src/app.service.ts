@@ -28,9 +28,9 @@ export class AppService {
     return `${welcome}, ${bye}`
   }
 
-  getPluralizeTranslationMessage(lang: string, username: string, numOfTimes: string): Promise<any> {
-    return this.i18n.translate('error.SETUP.INCORRECT_ANSWER', {
-      args: { username, count: numOfTimes },
+  getPluralizeTranslationMessage(lang: string, username: string, count: string): Promise<any> {
+    return this.i18n.translate('error.SETUP.TOMATO', {
+      args: { username, count },
       lang,
     })
   }

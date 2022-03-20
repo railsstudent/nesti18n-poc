@@ -4,10 +4,10 @@
     "SETUP": {
         "WELCOME": "Welcome {0.username}",
         "BYE": "Bye {0.username}", 
-        "INCORRECT_ANSWER": { 
-            "one": "{0.username} answers the question incorrectly {0.count} time",
-            "other": "{0.username} answers the question incorrectly {0.count} times",
-            "zero": "{0.username} answers the question correctly"
+        "TOMATO": { 
+            "one": "{0.username} buys {0.count} tomato",
+            "other": "{0.username} buys {0.count} tomatoes",
+            "zero": "{0.username} buys {0.count} tomato"
         }
     },
     "EXCEPTION": "I don't know {0.language}"

@@ -1,8 +1,8 @@
-import { Module } from '@nestjs/common'
-import { APP_FILTER } from '@nestjs/core'
 import { AllExceptionsFilter } from './all-exceptions.filter'
 import { AppController } from './app.controller'
 import { AppService } from './app.service'
+import { Module } from '@nestjs/common'
+import { APP_FILTER } from '@nestjs/core'
 import { HeaderResolver, I18nJsonParser, I18nModule } from 'nestjs-i18n'
 import * as path from 'path'
 

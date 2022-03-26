@@ -1,13 +1,13 @@
-import { I18nService } from 'nestjs-i18n'
-import { ExceptionFilter, Catch, ArgumentsHost, HttpException } from '@nestjs/common'
-import { HttpAdapterHost } from '@nestjs/core'
+import { ArgumentsHost, Catch, ExceptionFilter, HttpException } from '@nestjs/common'
 import { HttpArgumentsHost } from '@nestjs/common/interfaces'
+import { HttpAdapterHost } from '@nestjs/core'
+import { I18nService } from 'nestjs-i18n'
 
 @Catch(HttpException)
 export class AllExceptionsFilter implements ExceptionFilter {
   constructor(private readonly i18n: I18nService, private httpAdapterHost: HttpAdapterHost) {}
 
-  private isTranlsatedErrorException(
+  private isTranslatedErrorException(
     errorResponse: object,
   ): errorResponse is { key: string; args?: Record<string, any> } {
     if (errorResponse && (errorResponse as any).key) {
@@ -58,7 +58,7 @@ export class AllExceptionsFilter implements ExceptionFilter {
       }
     }
 
-    if (this.isTranlsatedErrorException(errorResponse)) {
+    if (this.isTranslatedErrorException(errorResponse)) {
       const translatedMessage = await this.i18n.translate(errorResponse.key, {
         lang: ctx.getRequest().i18nLang,
         args: errorResponse.args,

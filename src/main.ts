@@ -1,9 +1,8 @@
 import { NestFactory } from '@nestjs/core'
-import { AppModule } from './app.module'
-
-import helmet from 'helmet'
-import * as express from 'express'
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger'
+import * as express from 'express'
+import helmet from 'helmet'
+import { AppModule } from './app.module'
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule)

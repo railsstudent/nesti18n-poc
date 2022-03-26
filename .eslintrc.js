@@ -4,10 +4,13 @@ module.exports = {
     project: 'tsconfig.json',
     sourceType: 'module',
   },
-  plugins: ['@typescript-eslint/eslint-plugin'],
+  plugins: ['@typescript-eslint/eslint-plugin', 'import'],
   extends: [
     'plugin:@typescript-eslint/recommended',
-    'plugin:prettier/recommended'
+    'plugin:prettier/recommended',
+    'eslint:recommended',
+    'plugin:import/recommended',
+    'plugin:import/typescript'
   ],
   root: true,
   env: {
@@ -20,6 +23,21 @@ module.exports = {
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/explicit-module-boundary-types': 'off',
     '@typescript-eslint/no-explicit-any': 'off',
-    'prettier/prettier': ['error', {"singleQuote": true, "trailingComma": "all", "printWidth": 120, "tabWidth": 2, "semi": false}]
+    'prettier/prettier': ['error', {"singleQuote": true, "trailingComma": "all", "printWidth": 120, "tabWidth": 2, "semi": false}],
+    'import/first': 'error',
+    'import/newline-after-import': 'error',
+    'import/no-duplicates': 'error',
+    'no-unused-vars': 'off'
   },
+  "settings": {
+    'import/parsers': {
+      "@typescript-eslint/parser": [".ts", ".tsx"]
+    },
+    'import/resolver': {
+      'typescript': {
+        'alwaysTryTypes': true,
+        'project': '.'
+      }
+    }
+  }
 };

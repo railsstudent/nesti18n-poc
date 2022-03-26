@@ -31,5 +31,48 @@ module.exports = {
     'import/first': 'error',
     'import/newline-after-import': 'error',
     'import/no-duplicates': 'error',
+    '@typescript-eslint/naming-convention': [
+      'error',
+      {
+        selector: 'variable',
+        modifiers: ['const'],
+        format: ['camelCase', 'UPPER_CASE'],
+      },
+      {
+        selector: 'variable',
+        format: ['camelCase'],
+      },
+      {
+        selector: 'typeAlias',
+        format: ['PascalCase'],
+      },
+      {
+        selector: 'function',
+        format: ['PascalCase', 'camelCase'],
+      },
+      {
+        selector: ['enum', 'enumMember'],
+        format: ['UPPER_CASE'],
+      },
+      {
+        selector: 'parameter',
+        format: ['camelCase'],
+        leadingUnderscore: 'allow',
+      },
+      {
+        selector: ['method'],
+        format: ['camelCase'],
+      },
+      {
+        selector: 'variable',
+        types: ['boolean'],
+        format: ['PascalCase'],
+        prefix: ['is', 'should', 'has', 'can', 'did', 'will'],
+      },
+      {
+        selector: 'classProperty',
+        format: ['camelCase'],
+      },
+    ],
   },
 }

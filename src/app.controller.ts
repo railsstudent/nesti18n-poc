@@ -25,7 +25,7 @@ export class AppController {
   }
 
   @ApiOperation({
-    description: 'Display i18n message of nested tranlsations',
+    description: 'Display i18n message of nested translations',
   })
   @ApiQuery({
     name: 'username',
